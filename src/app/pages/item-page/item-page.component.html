@@ -1,0 +1,11 @@
+<div class="item-page" >
+  <delete-msg *ngIf="driverName" (answer)="remover($event)" [deleteCmp]="deleteCmp"></delete-msg>
+  <section class="flex gap20 align-center justify-center">
+    <item-list [currItem]="driver" [items]="items$|async" (showOnMap)="showOnMap($event)" (removeItem)="removeItem($event)"></item-list>
+    <google-map [center]="center" [options]="options">
+      <map-marker *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
+        [title]="marker.title" [options]="marker.options">
+      </map-marker>
+    </google-map>
+  </section>
+</div>

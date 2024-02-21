@@ -1,0 +1,107 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+$base-angular-primary: mat.define-palette(mat.$indigo-palette);
+$base-angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$base-angular-warn: mat.define-palette(mat.$red-palette);
+
+$base-angular-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $base-angular-primary,
+      accent: $base-angular-accent,
+      warn: $base-angular-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($base-angular-theme);
+
+@import "./assets/style/basics/flex";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: OpenSans, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: iconSolid;
+  min-height: 100vh;
+  color: #172b4d;
+  font-size: rem(12px);
+  font-weight: 400px;
+  line-height: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin: 0.8rem 0.3rem;
+  font-family: iconRegular;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  margin: 0 0 1rem;
+  max-width: 60ch;
+  line-height: 20px;
+}
+
+
+button{
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  font-family: inherit;
+  text-align: inherit;
+}
+
+// MAC like scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  -webkit-border-radius: 100px;
+}
+
+
+//helpers
+
+.pad10{
+  padding: 10px;
+}

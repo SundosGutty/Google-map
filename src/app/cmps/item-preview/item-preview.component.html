@@ -1,0 +1,18 @@
+<article class="flex gap10 align-center">
+  <section class="focus-section">{{currItem === item ? '📍' : ''}}</section>
+  <div class="item-preview-container flex align-center">
+    <section class="img-container">
+      <img src="https://robohash.org/{{item.name}}?set=set5" alt="user-image">
+    </section>
+    <section class="info-container">
+      <p><span>Driver name:</span> {{item.name}}</p>
+      <p><span>Driver phone number: </span> {{item.phone}}</p>
+      <p><span>{{item.name}} has: </span>{{item.tasks.length}} tasks</p>
+    </section>
+    <section class="action-btns flex gap10 align-center justify-center" (click)="$event.stopPropagation()">
+      <button mat-flat-button color="primary" (click)="removeItem()">delete</button>
+      <button mat-flat-button color="primary" [routerLink]="['/item/edit/', item.name]">edit</button>
+      <button mat-flat-button color="primary" (click)="showOnMap()">Map me</button>
+    </section>
+  </div>
+</article>

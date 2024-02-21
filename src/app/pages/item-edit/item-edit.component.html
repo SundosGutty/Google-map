@@ -1,0 +1,13 @@
+<section class="flex column align-center justify-center" routerLink="/item">
+  <form class="flex align-center justify-center gap10 column" (click)="$event.stopPropagation()"
+    (ngSubmit)="onSubmit(form)" #form="ngForm" *ngIf="currItem">
+    <input [(ngModel)]="currItem.name" name="name" placeholder="name" type="text">
+    <input [(ngModel)]="currItem.email" name="email" placeholder="email" type="text">
+    <input [(ngModel)]="currItem.phone" name="phone" placeholder="phone" type="text">
+    <section class="flex gap10">
+      <button routerLink="" mat-flat-button >Cancel</button>
+      <button mat-flat-button color="primary" [disabled]="form.invalid" md-button color="primary"
+        type="submit">SUBMIT</button>
+    </section>
+  </form>
+</section>

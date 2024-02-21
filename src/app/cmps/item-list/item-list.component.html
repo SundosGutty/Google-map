@@ -1,0 +1,7 @@
+<section>
+  <div class="flex column gap10 pad10">
+    <loading *ngIf="!items"></loading>
+    <item-preview  [currItem]="currItem" *ngFor="let item of items" (show)="showOnMap.emit($event)" (remove)="removeItem.emit($event)"
+      [item]="item"></item-preview>
+  </div>
+</section>
